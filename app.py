@@ -1,13 +1,13 @@
 import streamlit as st
 
-# 1. Configuração da página e Inserção do Ícone (Favicon) puxando do NOVO repositório
+# 1. Configuração da página e Inserção do Ícone (Favicon)
 st.set_page_config(
     page_title="Intranet MRC Imóveis", 
     page_icon="https://raw.githubusercontent.com/mrcimoveis-coder/portal-intranet/main/logo.jpeg", 
     layout="wide"
 )
 
-# 2. Ocultar o menu padrão do Streamlit para parecer um site próprio
+# 2. Ocultar o menu padrão do Streamlit
 st.markdown("""
 <style>
 #MainMenu {visibility: hidden;}
@@ -27,14 +27,13 @@ if "autenticado_intranet" not in st.session_state:
     st.session_state.autenticado_intranet = False
 
 # ==========================================
-# TELA DE LOGIN (Se não estiver autenticado)
+# TELA DE LOGIN
 # ==========================================
 if not st.session_state.autenticado_intranet:
     st.markdown("<br><br><br>", unsafe_allow_html=True)
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        # Puxando a logo do NOVO repositório para a tela de login
         st.image("https://raw.githubusercontent.com/mrcimoveis-coder/portal-intranet/main/logo.jpeg", width=260)
         st.title("🔒 Acesso à Intranet")
         st.write("Portal restrito aos colaboradores da MRC Imóveis.")
@@ -46,7 +45,7 @@ if not st.session_state.autenticado_intranet:
                 st.rerun()
             else:
                 st.error("❌ Senha incorreta.")
-    st.stop() # Bloqueia o carregamento do HTML para não autenticados
+    st.stop()
 
 # ==========================================
 # INTRANET CARREGADA (Com Menu Sanfona)
@@ -83,49 +82,27 @@ html_intranet = """
 .portal-title-custom { font-size: 1.35rem; font-weight: 700; color: var(--dark-gray); border-left: 2px solid var(--silver-gray); padding-left: 15px; }
 .main-custom { max-width: 1200px; margin: 40px auto; padding: 0 20px; flex: 1; width: 100%; }
 
-/* Layout Base (Mantendo as 3 colunas em telas grandes) */
+/* Layout Base */
 .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; align-items: start; }
 
 /* Estilo do Menu Sanfona */
-details.topic-column {
-    background-color: transparent;
-}
+details.topic-column { background-color: transparent; }
 summary.topic-header {
-    cursor: pointer;
-    list-style: none; /* Remove a seta nativa padrão */
-    position: relative;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #E2E8F0;
-    margin-bottom: 15px;
-    outline: none;
+    cursor: pointer; list-style: none; position: relative;
+    padding-bottom: 8px; border-bottom: 2px solid #E2E8F0; margin-bottom: 15px; outline: none;
 }
-summary.topic-header::-webkit-details-marker {
-    display: none;
-}
-/* Seta customizada que gira */
+summary.topic-header::-webkit-details-marker { display: none; }
 summary.topic-header::after {
-    content: '▼';
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    font-size: 12px;
-    color: var(--primary-red);
-    transition: transform 0.3s ease;
+    content: '▼'; position: absolute; right: 5px; top: 5px;
+    font-size: 12px; color: var(--primary-red); transition: transform 0.3s ease;
 }
-details[open] summary.topic-header::after {
-    transform: rotate(180deg);
-}
+details[open] summary.topic-header::after { transform: rotate(180deg); }
 .topic-header h2 { font-size: 1.3rem; color: var(--dark-gray); display: inline-block; margin: 0 0 5px 0;}
 .topic-header p { color: var(--silver-gray); font-size: 0.85rem; margin: 0; padding-right: 20px;}
 
-/* Animação do conteúdo da Sanfona */
-.topic-content {
-    animation: fadein 0.4s ease-out;
-}
-@keyframes fadein {
-    from { opacity: 0; transform: translateY(-5px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
+/* Animação */
+.topic-content { animation: fadein 0.4s ease-out; }
+@keyframes fadein { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
 /* Cartões de Acesso */
 .compact-card {
@@ -148,7 +125,6 @@ details[open] summary.topic-header::after {
 <div id="intranet-wrapper">
 <div class="header-custom">
 <div class="header-content-custom">
-<!-- Puxando a logo do NOVO repositório para o cabeçalho -->
 <img src="https://raw.githubusercontent.com/mrcimoveis-coder/portal-intranet/main/logo.jpeg" alt="MRC Imóveis">
 <span class="portal-title-custom">INTRANET</span>
 </div>
@@ -189,6 +165,14 @@ details[open] summary.topic-header::after {
 <div class="compact-card-left">
 <span class="compact-icon">📊</span>
 <div class="compact-info"><span class="compact-title">Carteira de Imóveis</span><span class="compact-subtitle">Gestão comercial e acervo</span></div>
+</div>
+<span class="compact-action">Abrir &rarr;</span>
+</a>
+<!-- NOVO BOTÃO DAS ADMINISTRADORAS AQUI -->
+<a href="https://app-condominios-mrcimoveis.streamlit.app/" target="_blank" class="compact-card">
+<div class="compact-card-left">
+<span class="compact-icon">🏢</span>
+<div class="compact-info"><span class="compact-title">Adm. de Condomínios</span><span class="compact-subtitle">Contatos e senhas vinculadas</span></div>
 </div>
 <span class="compact-action">Abrir &rarr;</span>
 </a>
@@ -259,5 +243,5 @@ details[open] summary.topic-header::after {
 </div>
 """
 
-# Renderiza o HTML dentro do Streamlit de forma limpa e tela cheia
+# Renderiza o HTML
 st.markdown(html_intranet, unsafe_allow_html=True)
