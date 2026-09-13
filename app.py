@@ -16,7 +16,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# 3. Definição da Senha
+# 3. Definição da Senha de Acesso
 SENHA_CORRETA = "431360"
 
 if "autenticado_intranet" not in st.session_state:
@@ -26,7 +26,7 @@ if "autenticado_intranet" not in st.session_state:
 # TELA DE LOGIN (Se não estiver autenticado)
 # ==========================================
 if not st.session_state.autenticado_intranet:
-    st.markdown("<br><br><br>", unsafe_allow_html=True) # Espaço em branco no topo
+    st.markdown("<br><br><br>", unsafe_allow_html=True)
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
@@ -41,7 +41,7 @@ if not st.session_state.autenticado_intranet:
                 st.rerun()
             else:
                 st.error("❌ Senha incorreta.")
-    st.stop() # Para a execução do código aqui. O HTML abaixo está seguro!
+    st.stop() # Bloqueia o carregamento do HTML para não autenticados
 
 # ==========================================
 # INTRANET CARREGADA (Se a senha estiver certa)
@@ -150,8 +150,7 @@ html_intranet = """
                     <span class="compact-action">Abrir &rarr;</span>
                 </a>
                 
-                <!-- NOVO APP: CARTEIRA DE IMÓVEIS -->
-                <a href="COLE_AQUI_O_LINK_DA_CARTEIRA_CRIADA_AGORA" target="_blank" class="compact-card">
+                <a href="https://carteira-imoveis-mrcimoveis.streamlit.app/" target="_blank" class="compact-card">
                     <div class="compact-card-left">
                         <span class="compact-icon">📊</span>
                         <div class="compact-info"><span class="compact-title">Carteira de Imóveis</span><span class="compact-subtitle">Gestão comercial e acervo</span></div>
@@ -224,5 +223,4 @@ html_intranet = """
 </div>
 """
 
-# Renderiza o HTML dentro do Streamlit de forma limpa e tela cheia
 st.markdown(html_intranet, unsafe_allow_html=True)
