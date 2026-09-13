@@ -50,7 +50,6 @@ if not st.session_state.autenticado_intranet:
 # ==========================================
 # INTRANET CARREGADA (Com Menu Sanfona)
 # ==========================================
-# HTML sem recuos para evitar formatação de código do Streamlit
 html_intranet = """
 <style>
 :root {
@@ -168,7 +167,6 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 </div>
 <span class="compact-action">Abrir &rarr;</span>
 </a>
-<!-- NOVO BOTÃO DAS ADMINISTRADORAS AQUI -->
 <a href="https://app-condominios-mrcimoveis.streamlit.app/" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">🏢</span>
@@ -217,12 +215,12 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 <p>Guias e normas internas para a equipe.</p>
 </summary>
 <div class="topic-content">
-<a href="#" class="compact-card disabled-link" onclick="event.preventDefault();">
+<a href="https://docs.google.com/document/d/1wW0NCOBAMaFNL32pt55YqfEBCigRRm4LEwi37zMiOBE/edit?usp=drive_link" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📘</span>
-<div class="compact-info"><span class="compact-title">Manual de Locação</span><span class="compact-subtitle">Regras e políticas internas</span></div>
+<div class="compact-info"><span class="compact-title">Manual do Superlógica</span><span class="compact-subtitle">Procedimentos e rotinas do sistema</span></div>
 </div>
-<span class="compact-action">Em breve &rarr;</span>
+<span class="compact-action">Ler Manual &rarr;</span>
 </a>
 <a href="#" class="compact-card disabled-link" onclick="event.preventDefault();">
 <div class="compact-card-left">
