@@ -23,15 +23,13 @@ footer {visibility: hidden;}
 # ==========================================
 # 3. LISTA DE USUÁRIOS E SENHAS
 # ==========================================
-# Altere os nomes e as senhas abaixo como preferir (sempre entre aspas).
-# O texto antes dos dois pontos é o LOGIN, o texto depois é a SENHA.
 USUARIOS = {
-    "admin": "431360In",
-    "marcelo": "431360In",
-    "pedro": "431220",
-    "manoel": "431360",
-    "marcio": "Mpve2804",
-    "Marcos.junior": "431360"
+    "admin": "431360",
+    "marcelo": "senha123",
+    "pedro": "senha456",
+    "joao": "mrc2026",
+    "maria": "mrc2026",
+    "ana": "ana123"
 }
 
 if "autenticado_intranet" not in st.session_state:
@@ -49,12 +47,10 @@ if not st.session_state.autenticado_intranet:
         st.title("🔒 Acesso à Intranet")
         st.write("Portal restrito aos colaboradores da MRC Imóveis.")
         
-        # Agora pede Usuário e Senha
         usuario_input = st.text_input("Usuário (Login):").lower().strip()
         senha_input = st.text_input("Senha:", type="password")
         
         if st.button("Entrar", type="primary", use_container_width=True):
-            # Verifica se o usuário existe na lista e se a senha está correta
             if usuario_input in USUARIOS and USUARIOS[usuario_input] == senha_input:
                 st.session_state.autenticado_intranet = True
                 st.rerun()
@@ -63,7 +59,7 @@ if not st.session_state.autenticado_intranet:
     st.stop()
 
 # ==========================================
-# 5. INTRANET CARREGADA (Com Menu Sanfona)
+# 5. INTRANET CARREGADA
 # ==========================================
 html_intranet = """
 <style>
@@ -154,6 +150,13 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 <p>Acesso rápido às ferramentas operacionais.</p>
 </summary>
 <div class="topic-content">
+<a href="https://financeiro-mrc-mrcimoveis.streamlit.app/" target="_blank" class="compact-card">
+<div class="compact-card-left">
+<span class="compact-icon">💰</span>
+<div class="compact-info"><span class="compact-title">Financeiro MRC</span><span class="compact-subtitle">Gestão de receitas e despesas</span></div>
+</div>
+<span class="compact-action">Abrir &rarr;</span>
+</a>
 <a href="https://conferencia-boletos-mrc.streamlit.app/" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📄</span>
@@ -230,7 +233,6 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 <p>Guias e normas internas para a equipe.</p>
 </summary>
 <div class="topic-content">
-<!-- Manual do Superlógica -->
 <a href="https://docs.google.com/document/d/1wW0NCOBAMaFNL32pt55YqfEBCigRRm4LEwi37zMiOBE/preview" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📘</span>
@@ -238,7 +240,6 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 </div>
 <span class="compact-action">Ler Manual &rarr;</span>
 </a>
-<!-- Procedimentos de Rescisão -->
 <a href="https://docs.google.com/document/d/1OVG0TWnb9Wa_Gv-1pyUWD8UU_UotIgTzBC46oKNY5bc/preview" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📋</span>
@@ -258,5 +259,4 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 </div>
 """
 
-# Renderiza o HTML
 st.markdown(html_intranet, unsafe_allow_html=True)
