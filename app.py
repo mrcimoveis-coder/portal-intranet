@@ -1,13 +1,13 @@
 import streamlit as st
 
-# 1. Configuração da página e Inserção do Ícone (Favicon)
+# 1. Configuração da página e Favicon
 st.set_page_config(
     page_title="Intranet MRC Imóveis", 
     page_icon="https://raw.githubusercontent.com/mrcimoveis-coder/portal-intranet/main/logo.jpeg", 
     layout="wide"
 )
 
-# 2. Ocultar o menu padrão do Streamlit
+# 2. Ocultar menus padrão do Streamlit
 st.markdown("""
 <style>
 #MainMenu {visibility: hidden;}
@@ -21,11 +21,11 @@ footer {visibility: hidden;}
 """, unsafe_allow_html=True)
 
 # ==========================================
-# 3. LISTA DE USUÁRIOS E SENHAS ATUALIZADA
+# 3. LISTA DE USUÁRIOS E SENHAS
 # ==========================================
 USUARIOS = {
     "admin": "431360#In",
-    "marcelo": "431360",
+    "marcelo": "431360In",
     "pedro.martinez": "431360",
     "manoel.iglesias": "431360",
     "marcio": "431360",
@@ -59,7 +59,7 @@ if not st.session_state.autenticado_intranet:
     st.stop()
 
 # ==========================================
-# 5. INTRANET CARREGADA
+# 5. DASHBOARD PRINCIPAL
 # ==========================================
 html_intranet = """
 <style>
@@ -110,10 +110,6 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 .topic-header h2 { font-size: 1.3rem; color: var(--dark-gray); display: inline-block; margin: 0 0 5px 0;}
 .topic-header p { color: var(--silver-gray); font-size: 0.85rem; margin: 0; padding-right: 20px;}
 
-/* Animação */
-.topic-content { animation: fadein 0.4s ease-out; }
-@keyframes fadein { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
-
 /* Cartões de Acesso */
 .compact-card {
     text-decoration: none; background-color: var(--card-bg); border-top: 4px solid var(--primary-red);
@@ -127,8 +123,6 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 .compact-title { color: var(--dark-gray); font-weight: 600; font-size: 14px; }
 .compact-subtitle { color: var(--silver-gray); font-size: 11.5px; margin-top: 3px; line-height: 1.2; }
 .compact-action { color: var(--primary-red); font-size: 12px; font-weight: bold; white-space: nowrap; margin-left: 10px; }
-.disabled-link { cursor: not-allowed; opacity: 0.8; }
-.disabled-link .compact-action { color: var(--silver-gray); }
 .footer-custom { text-align: center; padding: 20px; background-color: #ffffff; border-top: 1px solid #E2E8F0; color: var(--silver-gray); font-size: 0.85rem; margin-top: 30px; }
 </style>
 
@@ -154,6 +148,13 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 <div class="compact-card-left">
 <span class="compact-icon">💰</span>
 <div class="compact-info"><span class="compact-title">Financeiro MRC</span><span class="compact-subtitle">Gestão de receitas e despesas</span></div>
+</div>
+<span class="compact-action">Abrir &rarr;</span>
+</a>
+<a href="https://caucoes-mrc-mrcimoveis.streamlit.app/" target="_blank" class="compact-card">
+<div class="compact-card-left">
+<span class="compact-icon">🔐</span>
+<div class="compact-info"><span class="compact-title">Gestão de Cauções</span><span class="compact-subtitle">Controle e reajustes de garantias</span></div>
 </div>
 <span class="compact-action">Abrir &rarr;</span>
 </a>
