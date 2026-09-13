@@ -25,10 +25,10 @@ footer {visibility: hidden;}
 # ==========================================
 USUARIOS = {
     "admin": "431360#In",
-    "marcelo": "431360In",
+    "marcelo": "431360",
     "pedro.martinez": "431360",
     "manoel.iglesias": "431360",
-    "marcio": "Mpve2804",
+    "marcio": "431360",
     "marcos.junior": "431360"
 }
 
