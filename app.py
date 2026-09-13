@@ -20,14 +20,25 @@ footer {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
 
-# 3. Definição da Senha de Acesso
-SENHA_CORRETA = "431360"
+# ==========================================
+# 3. LISTA DE USUÁRIOS E SENHAS
+# ==========================================
+# Altere os nomes e as senhas abaixo como preferir (sempre entre aspas).
+# O texto antes dos dois pontos é o LOGIN, o texto depois é a SENHA.
+USUARIOS = {
+    "admin": "431360In",
+    "marcelo": "431360In",
+    "pedro": "431220",
+    "manoel": "431360",
+    "marcio": "Mpve2804",
+    "Marcos.junior": "431360"
+}
 
 if "autenticado_intranet" not in st.session_state:
     st.session_state.autenticado_intranet = False
 
 # ==========================================
-# TELA DE LOGIN
+# 4. TELA DE LOGIN INDIVIDUALIZADA
 # ==========================================
 if not st.session_state.autenticado_intranet:
     st.markdown("<br><br><br>", unsafe_allow_html=True)
@@ -38,17 +49,21 @@ if not st.session_state.autenticado_intranet:
         st.title("🔒 Acesso à Intranet")
         st.write("Portal restrito aos colaboradores da MRC Imóveis.")
         
-        senha_input = st.text_input("Digite a senha de acesso:", type="password")
+        # Agora pede Usuário e Senha
+        usuario_input = st.text_input("Usuário (Login):").lower().strip()
+        senha_input = st.text_input("Senha:", type="password")
+        
         if st.button("Entrar", type="primary", use_container_width=True):
-            if senha_input == SENHA_CORRETA:
+            # Verifica se o usuário existe na lista e se a senha está correta
+            if usuario_input in USUARIOS and USUARIOS[usuario_input] == senha_input:
                 st.session_state.autenticado_intranet = True
                 st.rerun()
             else:
-                st.error("❌ Senha incorreta.")
+                st.error("❌ Usuário ou senha incorretos.")
     st.stop()
 
 # ==========================================
-# INTRANET CARREGADA (Com Menu Sanfona)
+# 5. INTRANET CARREGADA (Com Menu Sanfona)
 # ==========================================
 html_intranet = """
 <style>
