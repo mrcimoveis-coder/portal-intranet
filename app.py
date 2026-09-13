@@ -1,7 +1,11 @@
 import streamlit as st
 
-# 1. Configuração da página para ocupar a tela toda
-st.set_page_config(page_title="Intranet MRC Imóveis", page_icon="🏢", layout="wide")
+# 1. Configuração da página e Inserção do Ícone (Favicon) da MRC Imóveis
+st.set_page_config(
+    page_title="Intranet MRC Imóveis", 
+    page_icon="https://raw.githubusercontent.com/mrcimoveis-coder/intranet/main/logo.jpeg", 
+    layout="wide"
+)
 
 # 2. Ocultar o menu padrão do Streamlit para parecer um site próprio
 st.markdown("""
@@ -44,9 +48,9 @@ if not st.session_state.autenticado_intranet:
     st.stop() # Bloqueia o carregamento do HTML para não autenticados
 
 # ==========================================
-# INTRANET CARREGADA (Se a senha estiver certa)
+# INTRANET CARREGADA (Com Menu Sanfona)
 # ==========================================
-# O texto abaixo está sem recuos (alinhado à esquerda) de propósito para evitar bugs visuais
+# HTML sem recuos para evitar formatação de código do Streamlit
 html_intranet = """
 <style>
 :root {
@@ -77,10 +81,52 @@ html_intranet = """
 .header-content-custom img { max-height: 70px; width: auto; }
 .portal-title-custom { font-size: 1.35rem; font-weight: 700; color: var(--dark-gray); border-left: 2px solid var(--silver-gray); padding-left: 15px; }
 .main-custom { max-width: 1200px; margin: 40px auto; padding: 0 20px; flex: 1; width: 100%; }
+
+/* Layout Base (Mantendo as 3 colunas em telas grandes) */
 .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; align-items: start; }
-.topic-column { display: flex; flex-direction: column; }
-.topic-header h2 { font-size: 1.3rem; color: var(--dark-gray); padding-bottom: 8px; border-bottom: 2px solid #E2E8F0; margin-bottom: 8px;}
-.topic-header p { color: var(--silver-gray); font-size: 0.85rem; margin-bottom: 20px;}
+
+/* Estilo do Menu Sanfona */
+details.topic-column {
+    background-color: transparent;
+}
+summary.topic-header {
+    cursor: pointer;
+    list-style: none; /* Remove a seta nativa padrão */
+    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E2E8F0;
+    margin-bottom: 15px;
+    outline: none;
+}
+summary.topic-header::-webkit-details-marker {
+    display: none;
+}
+/* Seta customizada que gira */
+summary.topic-header::after {
+    content: '▼';
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 12px;
+    color: var(--primary-red);
+    transition: transform 0.3s ease;
+}
+details[open] summary.topic-header::after {
+    transform: rotate(180deg);
+}
+.topic-header h2 { font-size: 1.3rem; color: var(--dark-gray); display: inline-block; margin: 0 0 5px 0;}
+.topic-header p { color: var(--silver-gray); font-size: 0.85rem; margin: 0; padding-right: 20px;}
+
+/* Animação do conteúdo da Sanfona */
+.topic-content {
+    animation: fadein 0.4s ease-out;
+}
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(-5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Cartões de Acesso */
 .compact-card {
     text-decoration: none; background-color: var(--card-bg); border-top: 4px solid var(--primary-red);
     border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); padding: 15px;
@@ -109,12 +155,13 @@ html_intranet = """
 <div class="main-custom">
 <div class="dashboard-grid">
 
-<!-- COLUNA 1: SISTEMAS -->
-<div class="topic-column">
-<div class="topic-header">
+<!-- COLUNA 1: SISTEMAS (SANFONA) -->
+<details class="topic-column" open>
+<summary class="topic-header">
 <h2>Sistemas e Aplicativos</h2>
 <p>Acesso rápido às ferramentas operacionais.</p>
-</div>
+</summary>
+<div class="topic-content">
 <a href="https://conferencia-boletos-mrc.streamlit.app/" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📄</span>
@@ -144,13 +191,15 @@ html_intranet = """
 <span class="compact-action">Abrir &rarr;</span>
 </a>
 </div>
+</details>
 
-<!-- COLUNA 2: FICHAS CADASTRAIS -->
-<div class="topic-column">
-<div class="topic-header">
+<!-- COLUNA 2: FICHAS CADASTRAIS (SANFONA) -->
+<details class="topic-column" open>
+<summary class="topic-header">
 <h2>Fichas Cadastrais</h2>
 <p>Links para envio de cadastros à imobiliária.</p>
-</div>
+</summary>
+<div class="topic-content">
 <a href="https://cadastro-pf-mrcimoveis.streamlit.app/" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📝</span>
@@ -173,13 +222,15 @@ html_intranet = """
 <span class="compact-action">Abrir &rarr;</span>
 </a>
 </div>
+</details>
 
-<!-- COLUNA 3: MANUAIS -->
-<div class="topic-column">
-<div class="topic-header">
+<!-- COLUNA 3: MANUAIS (SANFONA) -->
+<details class="topic-column" open>
+<summary class="topic-header">
 <h2>Manuais e Procedimentos</h2>
 <p>Guias e normas internas para a equipe.</p>
-</div>
+</summary>
+<div class="topic-content">
 <a href="#" class="compact-card disabled-link" onclick="event.preventDefault();">
 <div class="compact-card-left">
 <span class="compact-icon">📘</span>
@@ -195,6 +246,7 @@ html_intranet = """
 <span class="compact-action">Em breve &rarr;</span>
 </a>
 </div>
+</details>
 
 </div>
 </div>
