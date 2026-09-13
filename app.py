@@ -21,15 +21,15 @@ footer {visibility: hidden;}
 """, unsafe_allow_html=True)
 
 # ==========================================
-# 3. LISTA DE USUÁRIOS E SENHAS
+# 3. LISTA DE USUÁRIOS E SENHAS ATUALIZADA
 # ==========================================
 USUARIOS = {
-    "admin": "431360",
-    "marcelo": "senha123",
-    "pedro": "senha456",
-    "joao": "mrc2026",
-    "maria": "mrc2026",
-    "ana": "ana123"
+    "admin": "431360#In",
+    "marcelo": "431360In",
+    "pedro.martinez": "431360",
+    "manoel.iglesias": "431360",
+    "marcio": "Mpve2804",
+    "marcos.junior": "431360"
 }
 
 if "autenticado_intranet" not in st.session_state:
