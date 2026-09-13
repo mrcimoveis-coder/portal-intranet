@@ -1,9 +1,9 @@
 import streamlit as st
 
-# 1. Configuração da página e Inserção do Ícone (Favicon) da MRC Imóveis
+# 1. Configuração da página e Inserção do Ícone (Favicon) puxando do NOVO repositório
 st.set_page_config(
     page_title="Intranet MRC Imóveis", 
-    page_icon="https://raw.githubusercontent.com/mrcimoveis-coder/intranet/main/logo.jpeg", 
+    page_icon="https://raw.githubusercontent.com/mrcimoveis-coder/portal-intranet/main/logo.jpeg", 
     layout="wide"
 )
 
@@ -34,7 +34,8 @@ if not st.session_state.autenticado_intranet:
     col1, col2, col3 = st.columns([1, 2, 1])
     
     with col2:
-        st.image("https://raw.githubusercontent.com/mrcimoveis-coder/intranet/main/logo.jpeg", width=260)
+        # Puxando a logo do NOVO repositório para a tela de login
+        st.image("https://raw.githubusercontent.com/mrcimoveis-coder/portal-intranet/main/logo.jpeg", width=260)
         st.title("🔒 Acesso à Intranet")
         st.write("Portal restrito aos colaboradores da MRC Imóveis.")
         
@@ -147,7 +148,8 @@ details[open] summary.topic-header::after {
 <div id="intranet-wrapper">
 <div class="header-custom">
 <div class="header-content-custom">
-<img src="https://raw.githubusercontent.com/mrcimoveis-coder/intranet/main/logo.jpeg" alt="MRC Imóveis">
+<!-- Puxando a logo do NOVO repositório para o cabeçalho -->
+<img src="https://raw.githubusercontent.com/mrcimoveis-coder/portal-intranet/main/logo.jpeg" alt="MRC Imóveis">
 <span class="portal-title-custom">INTRANET</span>
 </div>
 </div>
