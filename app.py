@@ -215,7 +215,7 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 <p>Guias e normas internas para a equipe.</p>
 </summary>
 <div class="topic-content">
-<!-- Link com visualização em Modo Leitura (Preview) -->
+<!-- Manual do Superlógica -->
 <a href="https://docs.google.com/document/d/1wW0NCOBAMaFNL32pt55YqfEBCigRRm4LEwi37zMiOBE/preview" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📘</span>
@@ -223,12 +223,13 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 </div>
 <span class="compact-action">Ler Manual &rarr;</span>
 </a>
-<a href="#" class="compact-card disabled-link" onclick="event.preventDefault();">
+<!-- Procedimentos de Rescisão -->
+<a href="https://docs.google.com/document/d/1OVG0TWnb9Wa_Gv-1pyUWD8UU_UotIgTzBC46oKNY5bc/preview" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📋</span>
-<div class="compact-info"><span class="compact-title">Procedimento de Vistoria</span><span class="compact-subtitle">Passo a passo padrão</span></div>
+<div class="compact-info"><span class="compact-title">Procedimentos de Rescisão</span><span class="compact-subtitle">Orientações para desocupação</span></div>
 </div>
-<span class="compact-action">Em breve &rarr;</span>
+<span class="compact-action">Ler Procedimento &rarr;</span>
 </a>
 </div>
 </details>
