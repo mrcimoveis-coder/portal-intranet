@@ -215,7 +215,8 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 <p>Guias e normas internas para a equipe.</p>
 </summary>
 <div class="topic-content">
-<a href="https://docs.google.com/document/d/1wW0NCOBAMaFNL32pt55YqfEBCigRRm4LEwi37zMiOBE/edit?usp=drive_link" target="_blank" class="compact-card">
+<!-- Link com visualização em Modo Leitura (Preview) -->
+<a href="https://docs.google.com/document/d/1wW0NCOBAMaFNL32pt55YqfEBCigRRm4LEwi37zMiOBE/preview" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📘</span>
 <div class="compact-info"><span class="compact-title">Manual do Superlógica</span><span class="compact-subtitle">Procedimentos e rotinas do sistema</span></div>
