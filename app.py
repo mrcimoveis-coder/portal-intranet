@@ -248,6 +248,13 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 </div>
 <span class="compact-action">Ler Procedimento &rarr;</span>
 </a>
+<a href="https://docs.google.com/document/d/1RCQzuVD8KMgQSKR80Kf5ZY1s4xrsmYhbklDuOONqtCU/preview" target="_blank" class="compact-card">
+<div class="compact-card-left">
+<span class="compact-icon">📜</span>
+<div class="compact-info"><span class="compact-title">Certidões de Venda</span><span class="compact-subtitle">Locais de emissão de CNDs e Ônus Reais</span></div>
+</div>
+<span class="compact-action">Ler Guia &rarr;</span>
+</a>
 </div>
 </details>
 
