@@ -1,5 +1,5 @@
 def render_portal() -> str:
-    return r"""
+    html = r"""
 <style>
 :root {
   --mrc-red:#c4001a; --mrc-red-dark:#950014; --navy:#172033; --ink:#252a34;
@@ -120,3 +120,4 @@ body { background:var(--canvas); }
   <footer class="mrc-footer"><span>© 2026 MRC Imóveis · Uso interno</span><span>Portal Corporativo MRC</span></footer>
 </div>
 """
+    return "\n".join(line.lstrip() for line in html.splitlines())
