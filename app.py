@@ -1,5 +1,7 @@
 import streamlit as st
 
+from portal_theme import render_portal
+
 # 1. Configuração da página e Favicon
 st.set_page_config(
     page_title="Intranet MRC Imóveis", 
@@ -267,4 +269,5 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 </div>
 """
 
+html_intranet = render_portal()
 st.markdown(html_intranet, unsafe_allow_html=True)
