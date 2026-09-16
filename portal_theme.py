@@ -99,9 +99,9 @@ body { background:var(--canvas); }
         <article class="resource-group">
           <div class="resource-title"><span>Cadastros</span><h3>Fichas cadastrais</h3></div>
           <div class="resource-list">
-            <a class="resource-link" href="https://cadastro-pf-mrcimoveis.streamlit.app/" target="_blank"><span class="mini-icon">PF</span><span class="copy"><b>Pessoa Física</b><small>Cadastro de inquilino e fiador.</small></span><span class="arrow">›</span></a>
-            <a class="resource-link" href="https://cadastro-pj-mrcimoveis.streamlit.app/" target="_blank"><span class="mini-icon">PJ</span><span class="copy"><b>Pessoa Jurídica</b><small>Cadastro para locação empresarial.</small></span><span class="arrow">›</span></a>
-            <a class="resource-link" href="https://cadastro-proprietario-mrcimoveis.streamlit.app/" target="_blank"><span class="mini-icon">⌾</span><span class="copy"><b>Captação de Proprietário</b><small>Disponibilização de novo imóvel.</small></span><span class="arrow">›</span></a>
+            <a class="resource-link" href="https://pf.163-176-88-73.nip.io/" target="_blank"><span class="mini-icon">PF</span><span class="copy"><b>Pessoa Física</b><small>Cadastro de inquilino e fiador.</small></span><span class="arrow">›</span></a>
+            <a class="resource-link" href="https://pj.163-176-88-73.nip.io/" target="_blank"><span class="mini-icon">PJ</span><span class="copy"><b>Pessoa Jurídica</b><small>Cadastro para locação empresarial.</small></span><span class="arrow">›</span></a>
+            <a class="resource-link" href="https://proprietario.163-176-88-73.nip.io/" target="_blank"><span class="mini-icon">⌾</span><span class="copy"><b>Captação de Proprietário</b><small>Disponibilização de novo imóvel.</small></span><span class="arrow">›</span></a>
           </div>
         </article>
 
