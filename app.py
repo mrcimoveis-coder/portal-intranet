@@ -26,12 +26,8 @@ footer {visibility: hidden;}
 # 3. LISTA DE USUÁRIOS E SENHAS
 # ==========================================
 USUARIOS = {
-    "admin": "431360#In",
-    "marcelo": "431360In",
-    "pedro.martinez": "431360",
-    "manoel.iglesias": "431360",
-    "marcio": "431360",
-    "marcos.junior": "431360"
+    str(usuario): str(senha)
+    for usuario, senha in st.secrets["usuarios"].items()
 }
 
 if "autenticado_intranet" not in st.session_state:
