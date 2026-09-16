@@ -205,21 +205,21 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 <p>Links para envio de cadastros à imobiliária.</p>
 </summary>
 <div class="topic-content">
-<a href="https://cadastro-pf-mrcimoveis.streamlit.app/" target="_blank" class="compact-card">
+<a href="https://pf.163-176-88-73.nip.io/" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">📝</span>
 <div class="compact-info"><span class="compact-title">Ficha Pessoa Física (PF)</span><span class="compact-subtitle">Cadastro de inquilino e fiador</span></div>
 </div>
 <span class="compact-action">Abrir &rarr;</span>
 </a>
-<a href="https://cadastro-pj-mrcimoveis.streamlit.app/" target="_blank" class="compact-card">
+<a href="https://pj.163-176-88-73.nip.io/" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">💼</span>
 <div class="compact-info"><span class="compact-title">Ficha Pessoa Jurídica (PJ)</span><span class="compact-subtitle">Locação para empresas</span></div>
 </div>
 <span class="compact-action">Abrir &rarr;</span>
 </a>
-<a href="https://cadastro-proprietario-mrcimoveis.streamlit.app/" target="_blank" class="compact-card">
+<a href="https://proprietario.163-176-88-73.nip.io/" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">🔑</span>
 <div class="compact-info"><span class="compact-title">Captação Proprietário</span><span class="compact-subtitle">Disponibilizar novo imóvel</span></div>
