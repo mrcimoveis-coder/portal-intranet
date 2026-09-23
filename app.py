@@ -232,7 +232,7 @@ details[open] summary.topic-header::after { transform: rotate(180deg); }
 <p>Guias e normas internas para a equipe.</p>
 </summary>
 <div class="topic-content">
-<a href="https://raw.githubusercontent.com/mrcimoveis-coder/portal-intranet/main/Aluguel_Mensal_Guia_Operacional.pdf" target="_blank" class="compact-card">
+<a href="https://github.com/mrcimoveis-coder/portal-intranet/blob/main/Aluguel_Mensal_Guia_Operacional.pdf" target="_blank" class="compact-card">
 <div class="compact-card-left">
 <span class="compact-icon">🏠</span>
 <div class="compact-info"><span class="compact-title">Aluguel Mensal - Guia Operacional</span><span class="compact-subtitle">Cobranças, reajustes, boletos e remessa bancária</span></div>
